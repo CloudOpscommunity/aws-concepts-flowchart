@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS & DevOps Concepts Flowchart</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      box-sizing: border-box;
+      min-height: 100vh;
+      overflow-x: auto;
+    }
+
+    .mermaid {
+      width: 100%;
+      min-width: 800px;
+      max-width: 1500px;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="mermaid">
+flowchart TD
+  A[AWS & DevOps Concepts]
+  A --> B1[Basics]
+  A --> B2[Networking]
+  A --> B3[AWS Core]
+  A --> B4[Storage & Compute]
+  A --> B5[Security & Access]
+  A --> B6[Monitoring & Automation]
+  A --> B7[DevOps & Containers]
+  A --> B8[Database Services]
+  A --> B9[API & Communication]
+  A --> B10[AWS Best Practices]
+    </div>
+  </div>
+
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</body>
+</html>
