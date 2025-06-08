@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS & DevOps Concepts Flowchart</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      overflow: auto;
+    }
+
+    .container {
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .mermaid {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+    }
+
+    :root {
+      --mermaid-font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="mermaid">
+flowchart LR
+  A[AWS & DevOps Concepts]
+
+  %% Basics
+  A --> B1[Key Features of Computing]
+  subgraph Basics
+    B1 --> B2[Compiler and Interface]
+    B2 --> B3[Linux]
+    B3 --> B4[Bash]
+  end
+
+  %% Networking
+  A --> N1[Networking Concepts]
+  subgraph Networking
+    N1 --> N2[DNS]
+    N2 --> N3[DHCP]
+    N3 --> N4[ARP]
+    N4 --> N5[Firewall]
+    N5 --> N6[Route Tables]
+    N6 --> N7[ENI]
+    N7 --> N8[Bastion Host]
+    N8 --> N9[VPC Networking]
+    N9 --> N10[VPC Endpoint]
+  end
+
+  %% AWS Core
+  A --> C1[Cloud Computing]
+  subgraph AWS_Core
+    C1 --> C2[Service Models]
+    C2 --> C3[6 Pillars]
+    C3 --> C4[AWS Architecture]
+    C4 --> C5[VPC]
+    C5 --> C6[Subnets]
+    C6 --> C7[IGW]
+    C7 --> C8[NAT]
+    C8 --> C9[Elastic IP]
+  end
+
+  %% Storage & Compute
+  A --> D1[EC2]
+  subgraph Storage_Compute
+    D1 --> D2[S3]
+    D2 --> D3[EFS]
+    D3 --> D4[Snapshots]
+    D4 --> D5[Storage Types]
+    D5 --> D6[Hibernate]
+    D6 --> D7[Auto Scaling]
+    D7 --> D8[Load Balancer]
+    D8 --> D9[ELB]
+    D9 --> D10[Lambda]
+  end
+
+  %% Security
+  A --> E1[IAM]
+  subgraph Security
+    E1 --> E2[Security Groups]
+    E2 --> E3[Key Pairs]
+    E3 --> E4[NACL]
+    E4 --> E5[SSM]
+  end
+
+  %% Monitoring & Automation
+  A --> F1[CLI]
+  subgraph Monitoring_Automation
+    F1 --> F2[CloudWatch]
+    F2 --> F3[CloudTrail]
+    F3 --> F4[Billing]
+    F4 --> F5[CFT]
+    F5 --> F6[Boto3]
+  end
+
+  %% DevOps & Containers
+  A --> G1[GitHub]
+  subgraph DevOps_Containers
+    G1 --> G2[Docker Architecture]
+    G2 --> G3[Docker Swarm]
+    G3 --> G4[Docker Networking]
+    G4 --> G5[Kubernetes Architecture]
+    G5 --> G6[ECR]
+  end
+
+  %% Database
+  A --> H1[RDS]
+  subgraph Database_Services
+    H1 --> H2[DynamoDB]
+    H2 --> H3[Aurora]
+    H3 --> H4[ElastiCache]
+    H4 --> H5[RabbitMQ]
+  end
+
+  %% APIs
+  A --> I1[API Gateway]
+  subgraph API_Communication
+    I1 --> I2[REST]
+    I2 --> I3[HTTP]
+    I3 --> I4[SNS]
+    I4 --> I5[Communication]
+  end
+
+  %% Best Practices
+  A --> J1[CloudFront]
+  subgraph Best_Practices
+    J1 --> J2[AWS Best Practices]
+  end
+
+  %% Add styles with padding for key nodes to give arrow space
+  style A fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style B1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style B2 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style B3 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style B4 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+
+  style N1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style C1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style D1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style E1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style F1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style G1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style H1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style I1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+  style J1 fill:#fff,stroke:#333,stroke-width:1px,padding:20px
+    </div>
+  </div>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      flowchart: {
+        nodeSpacing: 120,
+        rankSpacing: 100,
+        curve: 'basis'
+      }
+    });
+  </script>
+</body>
+</html>
