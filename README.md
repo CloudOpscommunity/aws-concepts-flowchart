@@ -1,5 +1,7 @@
 AWS Roadmap Website
 This is a static website showcasing an AWS Learning Roadmap flowchart, built with HTML and CSS. It features animated dotted arrows for interactivity and is optimized for hosting on GitHub Pages.
+
+
 File Structure
 aws-roadmap/
 ├── index.html          # Main HTML file
