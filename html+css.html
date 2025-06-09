@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS & DevOps Ecosystem Diagram</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs" type="module"></script>
+  <style>
+    body {
+      background-color: #121212;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .mermaid {
+      background-color: #c9e08f;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0a74da88;
+    }
+  </style>
+</head>
+<body>
+  <div class="mermaid">
+classDiagram
+    class AWS_DevOps_Ecosystem
+
+    class Basics {
+        +Key_Features_of_Computer()
+        +Compiler_and_Interface()
+    }
+
+    class Networking {
+        +Protocols()
+        +CIDR_Calculation()
+        +VPN()
+        +DNS()
+        +DHCP()
+        +ARP()
+        +Firewall()
+    }
+
+    class CloudComputing {
+        +Cloud_Concepts()
+        +IAM()
+        +Service_Models()
+        +Well_Architected_Framework()
+        +AWS_Architecture()
+    }
+
+    class AWSNetworking {
+        +VPC()
+        +Subnets()
+        +Route_Tables()
+        +IGW()
+        +NAT()
+        +Security_Groups()
+        +Key_Pairs()
+        +NACL()
+    }
+
+    class ComputeStorage {
+        +EC2()
+        +ELB()
+        +ENI()
+        +S3()
+        +EFS()
+        +EBS()
+        +Lambda()
+        +CloudFormation()
+    }
+
+    class Monitoring {
+        +CloudWatch()
+        +CloudTrail()
+        +SNS()
+        +Billing()
+        +Snapshots()
+        +CloudFront()
+        +API_Gateway()
+        +REST()
+        +HTTP()
+        +GitHub()
+    }
+
+    class Tools {
+        +Hibernate()
+        +Bastion_Host()
+        +Boto3()
+        +VPC_Endpoint()
+        +Auto_Scaling()
+        +Elastic_IP()
+    }
+
+    class Databases {
+        +RDS()
+        +DynamoDB()
+        +Aurora()
+        +ElastiCache()
+        +SSM()
+        +RabbitMQ()
+        +Sync_Async_Comm()
+        +Best_Practices()
+    }
+
+    class Containers {
+        +Docker_Architecture()
+        +Docker_Swarm()
+        +Docker_Networking()
+        +ECR()
+        +Linux()
+        +Bash()
+    }
+
+    class Kubernetes {
+        +Kubernetes_Architecture()
+    }
+
+    AWS_DevOps_Ecosystem <|-- Basics
+    AWS_DevOps_Ecosystem <|-- Networking
+    AWS_DevOps_Ecosystem <|-- CloudComputing
+    AWS_DevOps_Ecosystem <|-- AWSNetworking
+    AWS_DevOps_Ecosystem <|-- ComputeStorage
+    AWS_DevOps_Ecosystem <|-- Monitoring
+    AWS_DevOps_Ecosystem <|-- Tools
+    AWS_DevOps_Ecosystem <|-- Databases
+    AWS_DevOps_Ecosystem <|-- Containers
+    AWS_DevOps_Ecosystem <|-- Kubernetes
+  </div>
+</body>
+</html>
