@@ -9,123 +9,174 @@
     body {
       background-color: #121212;
       color: #eee;
-      font-family: Arial, sans-serif;
-      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 24px;
     }
+
+    h1 {
+      text-align: center;
+      color: #f0f0f0;
+    }
+
     .mermaid {
-      background-color: #c9e08f;
-      padding: 30px;
-      border-radius: 12px;
+      background-color: #f0f0f0;
+      padding: 32px;
+      border-radius: 16px;
       box-shadow: 0 0 20px #0a74da88;
+      overflow-x: auto;
+      color: #000;
     }
   </style>
 </head>
 <body>
+  <h1>AWS & DevOps Flowchart</h1>
   <div class="mermaid">
-classDiagram
-    class AWS_DevOps_Ecosystem
+flowchart TD
 
-    class Basics {
-        +Key_Features_of_Computer()
-        +Compiler_and_Interface()
-    }
+  A[AWS]
+  class A awsblock;
 
-    class Networking {
-        +Protocols()
-        +CIDR_Calculation()
-        +VPN()
-        +DNS()
-        +DHCP()
-        +ARP()
-        +Firewall()
-    }
+  subgraph Main[All Domains]
+    direction TB
 
-    class CloudComputing {
-        +Cloud_Concepts()
-        +IAM()
-        +Service_Models()
-        +Well_Architected_Framework()
-        +AWS_Architecture()
-    }
+    subgraph Networking
+      direction TB
+      N[Networking Concepts]
+      N --> N1[Protocols]
+      N --> N2[CIDR Calculation]
+      N --> N3[VPN]
+      N --> N4[DNS]
+      N --> N5[DHCP]
+      N --> N6[ARP]
+      N --> N7[Firewall]
+      N --> N8[Route53]
+    end
+    class N networking;
 
-    class AWSNetworking {
-        +VPC()
-        +Subnets()
-        +Route_Tables()
-        +IGW()
-        +NAT()
-        +Security_Groups()
-        +Key_Pairs()
-        +NACL()
-    }
+    subgraph CloudNetworking
+      direction TB
+      CN[AWS Networking Concepts]
+      CN --> CN1[VPC]
+      CN --> CN2[Subnets]
+      CN --> CN3[Route Table]
+      CN --> CN4[IGW]
+      CN --> CN5[NAT Gateway]
+      CN --> CN6[Security Groups]
+      CN --> CN7[NACLs]
+      CN --> CN8[Key Pairs]
+      CN --> CN9[VPC Endpoint]
+    end
+    class CN cloudnet;
 
-    class ComputeStorage {
-        +EC2()
-        +ELB()
-        +ENI()
-        +S3()
-        +EFS()
-        +EBS()
-        +Lambda()
-        +CloudFormation()
-    }
+    subgraph Compute
+      direction TB
+      CS[Compute Services]
+      CS --> CS1[EC2]
+      CS --> CS2[ELB]
+      CS --> CS3[EBS]
+      CS --> CS4[EFS]
+      CS --> CS5[Lambda]
+      CS --> CS6[ENI]
+      CS --> CS7[CloudFormation]
+      CS --> CS8[CLI]
+    end
+    class CS compute;
 
-    class Monitoring {
-        +CloudWatch()
-        +CloudTrail()
-        +SNS()
-        +Billing()
-        +Snapshots()
-        +CloudFront()
-        +API_Gateway()
-        +REST()
-        +HTTP()
-        +GitHub()
-    }
+    subgraph CloudMonitoring
+      direction TB
+      M[Cloud Monitoring Concepts]
+      M --> M1[CloudWatch]
+      M --> M2[CloudTrail]
+      M --> M3[SNS]
+      M --> M4[Billing]
+      M --> M5[API Gateway]
+      M --> M6[REST]
+      M --> M7[HTTP]
+      M --> M8[GitHub]
+      M --> M9[CloudFront]
+    end
+    class M monitor;
 
-    class Tools {
-        +Hibernate()
-        +Bastion_Host()
-        +Boto3()
-        +VPC_Endpoint()
-        +Auto_Scaling()
-        +Elastic_IP()
-    }
+    subgraph Storage
+      direction TB
+      ST[Storage Services]
+      ST --> ST1[S3]
+      ST --> ST2[EBS]
+      ST --> ST3[EFS]
+      ST --> ST4[Snapshot]
+      ST --> ST5[Storage/Cloud]
+    end
+    class ST storage;
 
-    class Databases {
-        +RDS()
-        +DynamoDB()
-        +Aurora()
-        +ElastiCache()
-        +SSM()
-        +RabbitMQ()
-        +Sync_Async_Comm()
-        +Best_Practices()
-    }
+    subgraph CloudComputing
+      direction TB
+      C[Cloud Computing]
+      C --> C1[IAM]
+      C --> C2[Service Models]
+      C2 --> D1[SaaS]
+      C2 --> D2[PaaS]
+      C2 --> D3[IaaS]
+      C --> C3[5 Pillars]
+      C --> C4[AWS Architecture]
+    end
+    class C cloudcomp;
 
-    class Containers {
-        +Docker_Architecture()
-        +Docker_Swarm()
-        +Docker_Networking()
-        +ECR()
-        +Linux()
-        +Bash()
-    }
+    subgraph Tools
+      direction TB
+      T[AWS Tools]
+      T --> T1[Hibernate]
+      T --> T2[Bastion Host]
+      T --> T3[Boto3]
+      T --> T4[Auto Scaling]
+      T --> T5[Elastic IP]
+    end
+    class T tools;
 
-    class Kubernetes {
-        +Kubernetes_Architecture()
-    }
+    subgraph Docker
+      direction TB
+      DO[Docker]
+      DO --> DO1[Docker Architecture]
+      DO --> DO2[Docker Swarm]
+      DO --> DO3[Docker Networking]
+      DO --> DO4[ECR]
+      DO --> DO5[Linux]
+      DO --> DO6[Bash]
+    end
+    class DO docker;
 
-    AWS_DevOps_Ecosystem <|-- Basics
-    AWS_DevOps_Ecosystem <|-- Networking
-    AWS_DevOps_Ecosystem <|-- CloudComputing
-    AWS_DevOps_Ecosystem <|-- AWSNetworking
-    AWS_DevOps_Ecosystem <|-- ComputeStorage
-    AWS_DevOps_Ecosystem <|-- Monitoring
-    AWS_DevOps_Ecosystem <|-- Tools
-    AWS_DevOps_Ecosystem <|-- Databases
-    AWS_DevOps_Ecosystem <|-- Containers
-    AWS_DevOps_Ecosystem <|-- Kubernetes
+    subgraph Kubernetes
+      direction TB
+      K8[Kubernetes]
+      K8 --> K8a[Architecture]
+    end
+    class K8 kube;
+
+  end
+
+  A --> Main
+  Networking --> CloudNetworking
+  CloudNetworking --> Compute
+  Compute --> CloudMonitoring
+  CloudMonitoring --> Storage
+  CloudComputing --> CloudNetworking
+  CloudComputing --> Compute
+  CloudComputing --> Storage
+  Tools --> Compute
+  CloudNetworking --> Docker
+  Docker --> Kubernetes
+
+  %% Mermaid class styles
+  classDef awsblock fill:#ffcccb,stroke:#ff0000,stroke-width:4px,font-size:24px;
+  classDef networking fill:#a0d2eb,stroke:#2a4d69,stroke-width:2px;
+  classDef cloudnet fill:#bde0fe,stroke:#1c3b5a,stroke-width:2px;
+  classDef compute fill:#caffbf,stroke:#5c5470,stroke-width:2px;
+  classDef monitor fill:#fff3b0,stroke:#ff9900,stroke-width:2px;
+  classDef storage fill:#caffbf,stroke:#379683,stroke-width:2px;
+  classDef cloudcomp fill:#ffc6ff,stroke:#6a0572,stroke-width:2px;
+  classDef tools fill:#d0f4de,stroke:#379683,stroke-width:2px;
+  classDef docker fill:#ffdab9,stroke:#c94c4c,stroke-width:2px;
+  classDef kube fill:#ffd700,stroke:#5c5470,stroke-width:2px;
   </div>
 </body>
 </html>
