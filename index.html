@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Learning Roadmap</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>AWS Learning Roadmap</h1>
+    </header>
+    <main class="container">
+        <!-- Left Section: Steps -->
+        <aside class="steps" aria-label="AWS Learning Steps">
+            <section class="step">
+                <h2>Note</h2>
+                <p>AWS has lots of services. You don’t need to be proficient in all that they have to offer. This roadmap only covers an opinionated list of services to help you get started.</p>
+            </section>
+            <section class="step">
+                <h2>Step 1 - Essentials</h2>
+                <ul role="list">
+                    <li>IAM - Access Control for all resources</li>
+                    <li>VPC - Networking Layer</li>
+                    <li>EC2 - Compute</li>
+                </ul>
+            </section>
+            <div class="arrow" aria-hidden="true"></div>
+            <section class="step">
+                <h2>Step 2 - Learn these next</h2>
+                <ul role="list">
+                    <li>S3 - Storage</li>
+                    <li>SES - Emails</li>
+                    <li>Route53 - DNS</li>
+                    <li>Cloudwatch - Metrics, Alarms, Logs etc.</li>
+                    <li>Cloudfront - CDN</li>
+                </ul>
+            </section>
+            <div class="arrow" aria-hidden="true"></div>
+            <section class="step">
+                <h2>Step 3 - Pick these after</h2>
+                <ul role="list">
+                    <li>RDS - Managed Databases</li>
+                    <li>DynamoDB - NoSQL Storage</li>
+                    <li>Elasticache - Redis/Memcached</li>
+                    <li>ECS - Containers</li>
+                    <li>EKS - Kubernetes</li>
+                </ul>
+            </section>
+            <div class="arrow" aria-hidden="true"></div>
+            <section class="step">
+                <h2>Step 4 - Serverless</h2>
+                <ul role="list">
+                    <li>Lambda</li>
+                    <li>ECS Fargate</li>
+                </ul>
+            </section>
+            <section class="step">
+                <h2>Best way to learn?</h2>
+                <p>Make a simple app and use the services listed above for deployment.</p>
+            </section>
+        </aside>
+
+        <!-- Right Section: Services Flowchart -->
+        <section class="services-flowchart" aria-label="AWS Services Flowchart">
+            <!-- Introduction Section -->
+            <article class="intro-boxes">
+                <div class="box">What is Cloud Computing?</div>
+                <div class="box">IaaS vs PaaS vs SaaS</div>
+                <div class="box">Public vs Private vs Hybrid Cloud</div>
+                <div class="box">Introduction to AWS</div>
+                <div class="box">AWS Global Infrastructure</div>
+                <div class="box">Shared Responsibility Model</div>
+                <div class="box">Well-Architected Framework</div>
+            </article>
+
+            <!-- Core Services: EC2 and VPC -->
+            <article class="core-services">
+                <div class="box">EC2</div>
+                <div class="arrow horizontal" aria-hidden="true"></div>
+                <div class="box">VPC</div>
+            </article>
+            <article class="sub-boxes">
+                <div class="sub-box">Instance Types</div>
+                <div class="sub-box">CPU Credits</div>
+                <div class="sub-box">Storage / Volumes</div>
+                <div class="sub-box">Keypairs</div>
+                <div class="sub-box">Elastic IP</div>
+                <div class="sub-box">User Data Scripts</div>
+                <div class="sub-box">Purchasing Options</div>
+                <div class="sub-box">CIDR Blocks</div>
+                <div class="sub-box">Subnets</div>
+                <div class="sub-box">Route Tables</div>
+                <div class="sub-box">Security Groups</div>
+                <div class="sub-box">Internet Gateway</div>
+                <div class="sub-box">NAT Gateway</div>
+                <div class="sub-box">Private Subnet</div>
+                <div class="sub-box">Public Subnet</div>
+            </article>
+
+            <!-- Detailed Services -->
+            <article class="detailed-services">
+                <div class="service-group">
+                    <div class="box">Auto-Scaling</div>
+                    <div class="sub-box">AMI's</div>
+                    <div class="sub-box">Launch Templates</div>
+                    <div class="sub-box">Auto-Scaling Groups</div>
+                    <div class="sub-box">Scaling Policies</div>
+                    <div class="sub-box">Elastic Load Balancer</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">IAM</div>
+                    <div class="sub-box">Identity-Based</div>
+                    <div class="sub-box">Resource-Based</div>
+                    <div class="sub-box">Instance Profiles</div>
+                    <div class="sub-box">Assuming Roles</div>
+                    <div class="sub-box">Policies</div>
+                    <div class="sub-box">Users / User Groups</div>
+                    <div class="sub-box">Roles</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">S3</div>
+                    <div class="sub-box">Buckets / Objects</div>
+                    <div class="sub-box">Bucket / Object Lifecycle</div>
+                    <div class="sub-box">Storage Types</div>
+                    <div class="sub-box">Standard</div>
+                    <div class="sub-box">S3-IA</div>
+                    <div class="sub-box">Glacier</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">SES</div>
+                    <div class="sub-box">Sandbox / Sending Limits</div>
+                    <div class="sub-box">Identity Verification</div>
+                    <div class="sub-box">DKIM Setup</div>
+                    <div class="sub-box">Feedback Handling</div>
+                    <div class="sub-box">Configuration Sets</div>
+                    <div class="sub-box">Sender Reputation</div>
+                    <div class="sub-box">Dedicated IP</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">Route53</div>
+                    <div class="sub-box">Hosted Zones</div>
+                    <div class="sub-box">Routing Policies</div>
+                    <div class="sub-box">Healthchecks</div>
+                    <div class="sub-box">Private</div>
+                    <div class="sub-box">Public</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">Cloudwatch</div>
+                    <div class="sub-box">Metrics</div>
+                    <div class="sub-box">Events</div>
+                    <div class="sub-box">Logs</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">Cloudfront</div>
+                    <div class="sub-box">Distributions</div>
+                    <div class="sub-box">Policies</div>
+                    <div class="sub-box">Invalidations</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">DynamoDB</div>
+                    <div class="sub-box">Tables / Items / Attributes</div>
+                    <div class="sub-box">Primary Keys / Secondary Indexes</div>
+                    <div class="sub-box">Data Modeling</div>
+                    <div class="sub-box">Streams</div>
+                    <div class="sub-box">Capacity Settings</div>
+                    <div class="sub-box">Backup / Restore</div>
+                    <div class="sub-box">DynamoDB Local</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">RDS</div>
+                    <div class="sub-box">General Purpose</div>
+                    <div class="sub-box">Provisioned IOPS</div>
+                    <div class="sub-box">Magnetic</div>
+                    <div class="sub-box">DB Instances</div>
+                    <div class="sub-box">Storage Types</div>
+                    <div class="sub-box">Backup / Restore</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">ECS</div>
+                    <div class="sub-box">Clusters / ECS Container Agents</div>
+                    <div class="sub-box">Tasks</div>
+                    <div class="sub-box">Services</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">ECR</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">EKS</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">Elasticache</div>
+                    <div class="sub-box">Quotas</div>
+                </div>
+                <div class="service-group">
+                    <div class="box">Lambda</div>
+                    <div class="sub-box">Creating / Invoking Functions</div>
+                    <div class="sub-box">Layers</div>
+                    <div class="sub-box">Custom Runtimes</div>
+                    <div class="sub-box">Versioning / Aliases</div>
+                    <div class="sub-box">Event Bridge / Scheduled Execution</div>
+                    <div class="sub-box">Cold Start and Limitations</div>
+                    <div class="sub-box">Lambda@Edge</div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Explore more at <a href="https://aws.amazon.com" target="_blank" rel="noopener">aws.amazon.com</a></p>
+    </footer>
+</body>
+</html>
