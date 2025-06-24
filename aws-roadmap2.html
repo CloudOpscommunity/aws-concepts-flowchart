@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS Roadmap Flowchart</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      background-color: #f8f9fa;
+    }
+    #mermaid-container {
+      overflow: auto;
+      max-width: 100%;
+      max-height: 90vh;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>AWS Roadmap Flowchart</h1>
+  <div id="mermaid-container">
+    <pre class="mermaid">
+flowchart LR
+  A(AWS Introduction) ==> A1{{AWS services}}
+  style A fill:#ffccdd, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style A1 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+  A1 --o C1[(Compute)] & C2[(Storage)] & C3[(Networking)] & C4[(Database)] & C5[(Security)] & C6[(Management tools)]
+
+  %% Styles for C1 to C6 nodes
+  style C1 fill:#cceeff,stroke:#000000,stroke-width:2px,color:#000000
+  style C2 fill:#cceeff,stroke:#000000,stroke-width:2px,color:#000000
+  style C3 fill:#cceeff,stroke:#000000,stroke-width:2px,color:#000000
+  style C4 fill:#cceeff,stroke:#000000,stroke-width:2px,color:#000000
+  style C5 fill:#cceeff,stroke:#000000,stroke-width:2px,color:#000000
+  style C6 fill:#cceeff,stroke:#000000,stroke-width:2px,color:#000000
+
+  C1--x E[EC2] & L[Lambda] & D[Docker] & K[Kubernetes]
+  %% Styles for EC2, Lambda, Docker, Kubernetes
+  style E fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style L fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style D fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style K fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+
+  newlines[["`Instance type
+  Keypairs
+  Security groups
+  Elastic Ip
+  User data scripts
+  Autoscaling
+  Reserved Instances`"]]
+  E-->newlines
+
+  newlines1[["`Functions
+  Triggers
+  Event sources
+  Execution Roles`"]]
+  L-->newlines1
+
+  newlines2[["`Docker Images
+  ECR
+  Containerization`"]]
+  D-->newlines2
+
+  newlines3[["`EKS CLuster
+  Worker nodes
+  Deployment YAMLs
+  Service Objects`"]]
+  K-->newlines3
+
+  C2[(Storage)] --x s[s3] & EB[EBS] & EF(EFS) & ST[Storage gateway]
+  %% Styles for S3, EBS, EFS, and Storage Gateway
+  style s fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+  style EB fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+  style EF fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+  style ST fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+
+  slines[["`Bucket/Object storage
+  Versioning
+  Lifecycle Policies
+  Cross Region Replication
+  Static website Hosting`"]]
+  s-->slines
+
+  slines1[["`Block storage
+  Snapshot
+  Encryption`"]]
+  EB-->slines1
+
+  slines2[["`Shared storage
+  NFS Protocol
+  Mount Targets`"]]
+  EF-->slines2
+
+  slines3[["`Hybrid Storage
+  Caching and Tape Gateway`"]]
+  ST-->slines3
+
+  C3[(Networking)] --x V[VPC] & R5[Route53] & AP[API GAteway] & CF[Cloudfront]
+  %% Styles for VPC, Route53, API Gateway, and CloudFront
+  style V fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style R5 fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style AP fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style CF fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+
+  nlines[["`Subnets
+  CIDR Blocks
+  Routetables
+  NAT Gateway
+  Internet Gateway
+  Private and Public subnets
+  NACLs
+  Security groups`"]]
+  V-->nlines
+
+  nlines1[["`Hostedzones
+  Recordsets
+  Routing Policies`"]]
+  R5-->nlines1
+
+  nlines2[["`REST/HTTP APIs
+  Usage Plans
+  Stages and Deployments`"]]
+  AP-->nlines2
+
+  nlines3[["`CDN caching
+  Edge Locations
+  Geo Restriction`"]]
+  CF-->nlines3
+
+  C4 --x R[RDS] & Dy[DynamoDB] & RS[RedShift] & Ec[Elastic Cache]
+  %% Styles for RDS, DynamoDB, Redshift, and ElastiCache
+  style R fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+  style Dy fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+  style RS fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+  style Ec fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+
+  dlines[["`MySQL/PostgreSQl Engines
+  Snapshots
+  Multi-AZ zones
+  Parameter groups
+  Read Replicas`"]]
+  R-->dlines
+
+  dlines1[["`Key/Value store
+  Clobal Tables
+  Backup and Restore`"]]
+  Dy--> dlines1
+
+  dlines2[["`Data Warehouse
+  Cluster and nodes`"]]
+  RS-->dlines2
+
+  dlines3[["`Redis/Memcached
+  CacheNodes`"]]
+  Ec-->dlines3
+
+  C5 --x  IM[IAM] & Ks[KMS] & SH[Shield] & Wf[WAF]
+  %% Styles for IAM, KMS, Shield, and WAF
+  style IM fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style Ks fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style SH fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+  style Wf fill:#fffac8,stroke:#000000,stroke-width:2px,color:#000000
+
+  selines[["'Users/Groups
+  Roles
+  Policies
+  AccessAnalyzers'"]]
+  IM-->selines
+
+  selines1[["'Key Management
+  Customer Manages Keys'"]]
+  Ks-->selines1
+
+  selines2[["'DDoS Protection
+  Standard/Advanced'"]]
+  SH-->selines2
+
+  selines3[["'Web ACLs
+  Rules and Rule groups'"]]
+  Wf-->selines3
+
+  C6 --x Cw1[Cloudwatch] & Ctr[CloudTrail] & TA[TrustAdvisor]
+  %% Styles for CloudWatch, CloudTrail, and Trusted Advisor
+  style Cw1 fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+  style Ctr fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+  style TA fill:#d5f5d5,stroke:#000000,stroke-width:2px,color:#000000
+
+  mlines[["'Logs
+  Metrics
+  Alarms
+  Dashboards'"]]
+  Cw1-->mlines
+
+  mlines1[["'Event History
+  Compliance Tracking'"]]
+  Ctr-->mlines1
+
+  mlines2[["'Best practices
+  Cost Optimization'"]]
+  TA-->mlines2
+
+  style nlines fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style nlines1 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style nlines2 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style nlines3 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+
+  style dlines fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style dlines1 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style dlines2 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style dlines3 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+
+  style selines fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style selines1 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style selines2 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style selines3 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+
+  style mlines fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style mlines1 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style mlines2 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+
+  style slines fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style slines1 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style slines2 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style slines3 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+
+  style newlines fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style newlines1 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style newlines2 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+  style newlines3 fill:#d3d3d3, stroke:#000000, stroke-width:2px, color:#000000, stroke-dasharray: 5 5
+    </pre>
+  </div>
+</body>
+</html>
